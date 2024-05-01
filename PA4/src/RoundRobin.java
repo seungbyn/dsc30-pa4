@@ -1,10 +1,10 @@
-/*
- * NAME: TODO
- * PID: TODO
+/**
+ * NAME: David Oh
+ * PID: A18111523
  */
 
 /**
- * TODO
+ * Implements round robin computing style
  *
  * @author David Oh
  * @since 5/1/24
@@ -19,7 +19,9 @@ public class RoundRobin {
     private int quantum, burstTime, waitTime;
 
     /**
-     * TODO
+     * Round robin constructor
+     *
+     * @param toRun tasks to run
      *
      */
     public RoundRobin(Task[] toRun) {
@@ -29,7 +31,7 @@ public class RoundRobin {
 
         waitlist = new MyQueue<Task>();
         finished = new MyQueue<Task>();
-        for (int i = 0; i < toRun.length; i++ ){
+        for (int i = 0; i < toRun.length; i++) {
             waitlist.enqueue(toRun[i]);
         }
         this.quantum = 4;
@@ -38,7 +40,10 @@ public class RoundRobin {
     }
 
     /**
-     * TODO
+     * Round robin constructor with quantum
+     *
+     * @param quantum how big to make quantum
+     * @param toRun tasks to run
      *
      */
     public RoundRobin(int quantum, Task[] toRun) {
@@ -51,7 +56,7 @@ public class RoundRobin {
 
         waitlist = new MyQueue<Task>();
         finished = new MyQueue<Task>();
-        for (int i = 0; i < toRun.length; i++ ){
+        for (int i = 0; i < toRun.length; i++) {
             waitlist.enqueue(toRun[i]);
         }
         this.quantum = quantum;
@@ -60,8 +65,9 @@ public class RoundRobin {
     }
 
     /**
-     * TODO
+     * runs all tasks
      *
+     * @return String of what occured
      */
     public String runAllTasks() {
         if (this.waitlist.isEmpty()) {
@@ -90,10 +96,10 @@ public class RoundRobin {
                 taskOrder += " -> ";
             }
         }
-        return "All tasks are run within " + this.burstTime +
-                " units of burst time and " + this.waitTime +
-                "units of wait time. The tasks are finished in this order:\n" +
-                taskOrder;
+        return "All tasks are run within " + this.burstTime
+                + " units of burst time and " + this.waitTime
+                + "units of wait time. The tasks are finished in this order:\n"
+                + taskOrder;
     }
 
     /**

@@ -94,11 +94,11 @@ class MyQueueTest {
     public void toStringTest() {
         MyQueue queue = new MyQueue();
 
-        assertEquals("[(head) -> (tail)]", queue.toString());
+        assertEquals("[]", queue.toString());
 
         queue.enqueue(0);
-        assertEquals("[(head) -> 0 -> (tail)]", queue.toString());
+        assertEquals("[0]", queue.toString());
         queue.enqueue(1);
-        assertEquals("[(head) -> 0 -> 1 -> (tail)]", queue.toString());
+        assertEquals("[0 -> 1]", queue.toString());
     }
 }
