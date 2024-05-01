@@ -34,7 +34,8 @@ public class RoundRobin {
         for (int i = 0; i < toRun.length; i++) {
             waitlist.enqueue(toRun[i]);
         }
-        this.quantum = 4;
+        int defaultQuantum = 4;
+        this.quantum = defaultQuantum;
         this.burstTime = 0;
         this.waitTime = 0;
     }
@@ -103,7 +104,7 @@ public class RoundRobin {
     }
 
 
-    /**
+    /*
      * Main method for testing.
      * @param args command-line arguments
      */
@@ -137,6 +138,6 @@ public class RoundRobin {
         System.out.println(rr3.runAllTasks());   // TASKS_COMPLETED
         System.out.println();
     }
-    
+
      */
 }

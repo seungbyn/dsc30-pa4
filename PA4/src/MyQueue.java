@@ -51,7 +51,7 @@ public class MyQueue<T> {
      * adds element to queue
      *
      * @param data to be added to queue
-     * @throws IllegalStateException if data is null
+     * @throws IllegalArgumentException if data is null
      */
     public void enqueue(T data) {
         if (data == null) {
