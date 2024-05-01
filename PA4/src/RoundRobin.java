@@ -1,4 +1,4 @@
-/**
+/*
  * NAME: David Oh
  * PID: A18111523
  */
@@ -22,7 +22,7 @@ public class RoundRobin {
      * Round robin constructor
      *
      * @param toRun tasks to run
-     *
+     * @throws IllegalArgumentException if toRun is null
      */
     public RoundRobin(Task[] toRun) {
         if (toRun == null) {
@@ -44,7 +44,7 @@ public class RoundRobin {
      *
      * @param quantum how big to make quantum
      * @param toRun tasks to run
-     *
+     * @throws IllegalArgumentException if quantum less than one or toRUn is null
      */
     public RoundRobin(int quantum, Task[] toRun) {
         if (quantum < 1) {
@@ -102,10 +102,12 @@ public class RoundRobin {
                 + taskOrder;
     }
 
+
     /**
      * Main method for testing.
      * @param args command-line arguments
      */
+    /*
     public static void main(String[] args) {
         Task[] test1 = {new Task("A", 3), new Task("B", 4),
                         new Task("C", 4), new Task("D", 12),
@@ -135,4 +137,6 @@ public class RoundRobin {
         System.out.println(rr3.runAllTasks());   // TASKS_COMPLETED
         System.out.println();
     }
+    
+     */
 }

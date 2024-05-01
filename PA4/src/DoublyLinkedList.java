@@ -1,4 +1,4 @@
-/**
+/*
  * NAME: David Oh
  * PID: A18111523
  */
